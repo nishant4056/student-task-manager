@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TaskManager | Student Task Manager</title><link rel="stylesheet" href="style.css">
+</head><body>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+  <a class="brand" href="#"><span class="logo">✓</span> Task<span>Manager</span></a>
+  <nav>
+    <button class="nav active" data-filter="all">▦ All Tasks <b id="nav-all">0</b></button>
+    <button class="nav" data-filter="pending">◷ Pending <b id="nav-pending">0</b></button>
+    <button class="nav" data-filter="completed">✓ Completed <b id="nav-completed">0</b></button>
+  </nav>
+  <div class="quote"><span>✧</span><p>Small steps every day lead to big results.</p></div>
+  <button id="theme" class="theme">☼ Toggle theme</button>
+</aside>
+<main>
+<header><button id="menu" class="menu">☰</button><label class="search">⌕ <input id="search" placeholder="Search tasks..."></label><span id="today"></span><div class="avatar">NS</div></header>
+<section class="welcome"><div><small>YOUR PERSONAL WORKSPACE</small><h1>Good day! <em>✦</em></h1><p>Stay organized, stay productive.</p></div><span class="pill" id="progress">Let's make today count</span></section>
+<section class="stats">
+  <article class="blue"><span>▣</span><div><p>Total tasks</p><strong id="total">0</strong></div></article>
+  <article class="amber"><span>◷</span><div><p>Pending</p><strong id="pending">0</strong></div></article>
+  <article class="green"><span>✓</span><div><p>Completed</p><strong id="completed">0</strong></div></article>
+</section>
+<section class="panel">
+<div class="heading"><div><h2>My tasks</h2><p>Keep track of what matters.</p></div><button id="clear" class="plain">Clear completed</button></div>
+<form id="task-form">
+<input id="title" placeholder="＋ Add a new task..." maxlength="120" required>
+<input id="due" type="date" aria-label="Due date">
+<select id="priority" aria-label="Priority"><option value="medium">Medium priority</option><option value="high">High priority</option><option value="low">Low priority</option></select>
+<button class="primary">Add task ＋</button>
+</form>
+<div class="toolbar"><div class="chips"><button class="chip active" data-filter="all">All tasks <span id="chip-total">0</span></button><button class="chip" data-filter="pending">Pending</button><button class="chip" data-filter="completed">Completed</button></div>
+<label class="sort">Sort by <select id="sort"><option value="created">Recently added</option><option value="due">Due date</option><option value="priority">Priority</option></select></label></div>
+<div id="tasks" class="tasks"></div><div id="empty" class="empty"><div>✓</div><h3>All clear for now</h3><p>Add a task above and take your next small step.</p></div>
+</section>
+<footer>Made for better study days. <span>Student Task Manager · HTML · CSS · JavaScript</span></footer>
+</main></div>
+<dialog id="edit-dialog"><form id="edit-form"><h2>Edit task</h2><label>Task title<input id="edit-title" required maxlength="120"></label><label>Due date<input id="edit-due" type="date"></label><label>Priority<select id="edit-priority"><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option></select></label><div class="dialog-actions"><button type="button" id="cancel-edit" class="secondary">Cancel</button><button class="primary">Save changes</button></div></form></dialog>
+<div id="toast" role="status"></div><script src="script.js"></script></body></html>
